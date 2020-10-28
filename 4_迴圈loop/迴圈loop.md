@@ -69,7 +69,18 @@ for number in numbers:
 
 print(my_numbers)
 ```
-## 也可以一次輸入多個資料
+### 底下程式如果第五行改成  if (number % 2 = 0):答案會是甚麼??
+```
+numbers = [21, 4, 35, 1, 8, 7, 3, 6, 9]
+my_numbers = []
+
+for number in numbers:
+  if (number % 2 = 0): 
+    my_numbers.append(number)
+
+print(my_numbers)
+```
+## While Loop
 ```
 
 ```
