@@ -14,9 +14,14 @@ print(list1)
 list2=range(0,5)
 print(list(list2))
 ```
-##### 使用Python內建的type()函數顯示資料型態
+### rang(開始值,結束值,間隔值)
 ```
-
+list3=range(-4,5,2)
+print(list(list3))
+```
+```
+list4=range(-4,6,2)
+print(list(list4))
 ```
 ## 使用者如果直接輸入計算會錯誤
 ```
