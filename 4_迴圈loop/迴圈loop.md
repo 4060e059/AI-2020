@@ -81,7 +81,16 @@ for number in numbers:
 print(my_numbers)
 ```
 ## While Loop
+### n階程的計算
 ```
+total = i = 1
 
+n = int(input("請輸入正整數 n 的值："))
+
+while(i<=n):
+    total *= i  
+    i+=1      
+
+print("%d!=%d" % (n, total))
 ```
 
