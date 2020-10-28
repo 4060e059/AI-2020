@@ -58,11 +58,16 @@ for n in range(x):
 
 print(mysum)
 ```
-
-## Python eval() 函数
-##### eval() 函數用來執行一個字符串表達式，並返回表達式的值。
+## 跑出奇數的結果
 ```
+numbers = [21, 4, 35, 1, 8, 7, 3, 6, 9]
+my_numbers = []
 
+for number in numbers:
+  if (number % 2 != 0): 
+    my_numbers.append(number)
+
+print(my_numbers)
 ```
 ## 也可以一次輸入多個資料
 ```
