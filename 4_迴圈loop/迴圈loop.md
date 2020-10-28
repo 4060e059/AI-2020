@@ -113,4 +113,60 @@ while True:
 ```
 ## continue 指令
 ##### 在廻圈執行中途暫時停住不往下執行，而跳到廻圈的起始處繼續執行
+##### 撰寫一個可以排除數列中 5 的倍數的程式
+##### 輸入::一個正整數 n
+##### 輸出::
+##### 使用者只要輸入一個正整數，
+##### 程式會顯示由 1 到該整數的整數數列，但會將 5 的倍數排除
+```
+n = int(input("請輸入正整數："))
 
+for i in range(1, n+1):
+    if i % 5 ==0:
+        continue
+    print(i,end=" ")
+```
+### 限制範圍1到6，假如有三個空格可以填(數字不可重複)，請問排序組合
+```
+for i in range(1,6):
+    for j in range(1,5):
+        for k in range(1,7):
+            if( i != k ) and (i != j) and (j != k):
+                print(i,j,k)
+```
+### 0到18
+```
+for x in range(19):
+  print(x)
+```
+### 0到18間隔2
+```
+for x in range(0,19,2):
+  print(x)
+```
+###  20到12
+```
+for x in range(20,11,-1):
+  print(x)
+```
+### 無法顯示
+```
+for x in range(0,19,-1):
+  print(x)
+```
+### 把間隔的值貼到後面
+```
+output = ''
+
+for x in range(0,19,3):
+  output += str(x)
+  print(output, end=" ")
+```
+### 如果少了output += str(x)
+### 會顯示(0,3,6,9,12,15,18)
+```
+output = ''
+
+for x in range(0,19,3):
+  print(x, end=" ")
+```
