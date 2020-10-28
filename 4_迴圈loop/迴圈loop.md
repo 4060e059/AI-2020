@@ -93,4 +93,21 @@ while(i<=n):
 
 print("%d!=%d" % (n, total))
 ```
+## break 指令
+##### 我們會希望在迴圈執行到一半的時候就離開迴圈，而不要等到做完一次迴圈裡的所有事情。
+```
+fruits = ["香蕉","蘋果","橘子","鳳梨","西瓜"]
 
+while True:
+    fruit = input("請輸入喜歡的水果(Enter 結束)：")
+
+  #  if (fruit==""):
+  #      break
+
+    n = fruits.count(fruit) 
+    if (n>0):  # 串列元素存在
+        p=fruits.index(fruit)
+        print("%s 在串列中的第 %d 項" %(fruit,p+1))
+    else:
+        print(fruit,"不在串列中!")
+```
