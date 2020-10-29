@@ -1,8 +1,8 @@
 # python決策與選擇結構
 ```
 if
-if ...else
 if ...elsif
+if ...else
 if ...elsif ...else
 各種判斷條件
 AND
@@ -13,36 +13,155 @@ OR
 單一條件判斷 if ...else 二選一
 多重條件判斷 if ...elsif ...else 多選一
 ```
-## 讀取使用者輸入
-##### python輸入:raw_input 跟 input
 ```
-x = input('請輸入名字:')
-print('Hello, ' + x)
+程式流程控制　之 選擇(判斷) SELECTION /DECISION
+Python 程式碼縮排
+Python 語言以冒號「:」及縮排來表示程式區塊
+縮排為 1 個 Tab 鍵或 4 個空白鍵
+PS: Python沒有switch
+https://www.w3schools.com/python/python_conditions.asp
 ```
-##### 使用Python內建的type()函數顯示資料型態
+## if
 ```
-type(a)
-```
-## 使用者如果直接輸入計算會錯誤
-```
-a = input("請輸入：")
-a
+a = 33
+b = 200
 
-b=a+1
-b
+if b > a:
+  print("b is greater than a")
 ```
-## Python eval() 函数
-##### eval() 函數用來執行一個字符串表達式，並返回表達式的值。
+###### if 對的才會做
 ```
-a = eval(input("請輸入："))
-a
+a = 33
+b = 200
 
-b=a+1
-b
+if b > a:
+  print("b is greater than a")
 ```
-## 也可以一次輸入多個資料
+## if ...elsif
 ```
-a,b = eval(input("請輸入兩個數位："))
-a,b
-```
+a = 32
+b = 33
 
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+```
+```
+a = 33
+b = 33
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+```
+###### 如果都不對，也不會顯示
+```
+a = 35
+b = 33
+
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+```
+## if⋯else
+```
+a = 200
+b = 33
+
+if b > a:
+  print("b is greater than a")
+else:
+  print("b is not greater than a")
+```
+## if ...elsif ...else
+```
+a = 200
+b = 33
+
+if b > a:
+  print("b is greater than a")
+elif a == b:
+  print("a and b are equal")
+else:
+  print("a is greater than b")
+```
+## 各種判斷條件 AND OR
+##### 判斷是否為閏年
+```
+year= eval(input("請輸入年"))
+
+if ((year%400==0) or (year%4==0 and year%100!=0)):
+  print("{0} 是閏年".format(year))
+else:
+  print("{0} 不是閏年".format(year))
+```
+## 輸入:年月日
+## 輸出:已經過了多少日
+```
+import time
+
+date = time.localtime()	
+print(date)
+```
+```
+year, month, day = eval(input("請輸入年月日"))
+year, month, day
+##請輸入年月日2019,5,22
+##(2019, 5, 22)
+```
+##### 輸入目前時間
+```
+import time
+
+
+#date = time.localtime()		#取得目前的日期時間
+#year = date[0]
+#month = date[1]
+#day = date[2]
+
+year, month, day = eval(input("請輸入年月日::"))
+```
+```
+day_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+if year%400==0 or (year%4==0 and year%100!=0):	
+  day_month[1] = 29
+
+if month==1:
+    print(day)
+else:
+    print(sum(day_month[:month-1])+day)
+```
+## 多向判斷式（if⋯elif⋯else）:收銀台程式開發
+```
+百貨公司週年慶活動血拼大打折，
+吸引很多顧客上門，
+公司決定再加碼回饋客戶，
+
+只要客戶消費
+金額在 100000 元以上就打八折，
+金額在 50000 元以上就打八五折，
+金額在 30000 元以上就打九折，
+金額在 10000 元以上就打九五折，
+金額在 10000 元以下就不打折
+
+請幫該公司設計這個收銀台的程式，
+輸入顧客購買金額後，計算顧客應付的金錢。
+```
+```
+money = int(input("請輸入購物金額："))
+
+if(money >= 10000):
+    if(money >= 100000):
+        print(money * 0.8, end=" 元\n")  #八折
+    elif(money >= 50000):
+        print(money * 0.85, end=" 元\n")  #八五折
+    elif(money >= 30000):
+        print(money * 0.9, end=" 元\n")  #九折
+    else:
+        print(money * 0.95, end=" 元\n")  #九五折
+else:
+    print(money, end=" 元\n")  #未打折
+```
